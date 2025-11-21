@@ -91,3 +91,7 @@ async def get_regions(
     regions = query.all()
     return [r[0] for r in regions]
 
+
+
+
+

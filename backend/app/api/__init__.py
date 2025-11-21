@@ -1,4 +1,8 @@
-from app.api import auth, users, data
+from app.api import auth, users, data, hospitals
 
-__all__ = ["auth", "users", "data"]
+__all__ = ["auth", "users", "data", "hospitals"]
+
+
+
+
 

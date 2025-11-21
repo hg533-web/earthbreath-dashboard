@@ -1,0 +1,284 @@
+/* --- 基础布局和主题 --- */
+body {
+  margin: 0;
+  padding: 0;
+  /* 假设您的应用背景是深色 */
+  background-color: #030712; 
+}
+
+.home-page {
+max-width: 100vw; 
+padding: 0;
+margin: 0;
+overflow-x: hidden; /* 防止水平滚动 */
+}
+
+/* --- 滚动内容样式 (The Sections) --- */
+
+.story-section {
+/* 确保每个部分有足够的滚动空间 */
+height: 85vh; 
+position: relative; 
+padding: 0 2rem;
+width: 100%;
+box-sizing: border-box; /* 确保padding不会导致溢出 */
+overflow-x: hidden; /* 防止水平溢出 */
+}
+
+
+
+/* 浮动的文本 (动画目标) */
+.story-text-floating {
+  position: absolute; 
+  top: 5vh;
+  transform: none; 
+  max-width: 800px; /* 增加最大宽度以容纳更长的question文本 */
+  padding: 0; 
+  text-align: left;
+  color: #f0fdfa;
+  z-index: 20; 
+  pointer-events: none;
+  will-change: transform, opacity; 
+  transition: opacity 0.3s ease-out;
+  box-sizing: border-box;
+}
+/* 图片样式 */
+.story-image {
+  position: absolute;
+  z-index: 20; 
+  width: 35%; /* 调整宽度 */
+  max-width: 500px; 
+  height: auto;
+  object-fit: contain; 
+  pointer-events: none; 
+  top: 28vh; /* 放在靠下的位置，避免和文本重叠 */
+  will-change: transform, opacity;
+}
+
+/* 滚动的内容卡片 (用于详细描述) */
+.content-card {
+  background: rgba(5, 46, 47, 0.6);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  border-radius: 12px;
+  padding: 3.5rem; /* 增大内边距 */
+  max-width: 700px; /* 增大最大宽度 */
+  width: 45%; /* 增大宽度 */
+  text-align: left;
+  position: absolute;
+  z-index: 10; 
+  top: 35vh; 
+}
+
+.story-text-floating h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.1; 
+  font-weight: 700;
+  margin-top: 0;
+  word-wrap: break-word; /* 防止溢出 */
+}
+
+.story-text-floating .question-line {
+  font-size: 2.5rem; 
+  color: #a7f3d0;
+  font-weight: 400;
+  display: block; /* 确保它独占一行 */
+  text-align: left; /* 统一左对齐 */
+  white-space: nowrap; /* 保持单行，不换行 */
+  margin-top: 0.5rem;
+}
+
+.story-text-floating .subtitle {
+  font-size: 2.5rem;
+  color: #34d399; 
+  white-space: nowrap;
+}
+
+
+
+.content-card h3 {
+  color: #34d399; 
+  font-size: 2rem; /* 增大字体：从 2.5rem 到 3rem */
+  margin-top: 0;
+  margin-bottom: 1rem; /* 增加下边距 */
+  font-weight: 600;
+}
+
+.content-card p {
+  color: #a7f3d0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* --- 交错布局控制 --- */
+
+/* 1. 视觉单元 A (文本 + 图片) 靠左，详细描述单元 B (卡片) 靠右 */
+.story-section-left .story-text-floating,
+.story-section-left .story-image {
+    left: 5%; 
+    right: auto;
+}
+
+
+/* 详细描述单元 B 靠右 */
+.content-card.content-card-right {
+    right: 5%; 
+    left: auto;
+}
+
+/* 2. 视觉单元 A (文本 + 图片) 靠右，详细描述单元 B (卡片) 靠左 */
+/* story-2: 文本左对齐，但图片保持在右边 */
+.story-section-right .story-text-floating {
+    left: 5%; /* 文本左对齐 */
+    right: auto;
+    text-align: left; /* 统一左对齐 */
+    max-width: 800px;
+}
+
+.story-section-right .story-image {
+    right: 5%; /* 图片保持在右边 */
+    left: auto;
+}
+
+.story-section-right .story-text-floating h2 {
+    text-align: left; /* 统一左对齐 */
+    margin-bottom: 0.5rem;
+}
+
+.story-section-right .story-text-floating .question-line {
+    text-align: left; /* 统一左对齐 */
+    display: block;
+    white-space: nowrap;
+}
+
+
+/* 详细描述单元 B 靠左 */
+.content-card.content-card-left {
+    left: 5%; 
+    right: auto;
+}
+
+/* --- Hero Section (Story-5) --- */
+.story-section-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1rem; /* 减少上下padding */
+}
+
+.story-section-hero .hero {
+    text-align: center;
+    max-width: 900px;
+    padding: 0; /* 移除内边距，让间距更紧凑 */
+    margin: 0 auto;
+}
+
+.story-section-hero .hero .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #34d399;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem; /* 减少间距 */
+    font-weight: 600;
+}
+
+.story-section-hero .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 0 0 1rem 0; /* 减少间距：从 1.5rem 到 1rem */
+    color: #f0fdfa;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.story-section-hero .hero p {
+    font-size: 1.25rem;
+    line-height: 1.6; /* 减少行高：从 1.8 到 1.6 */
+    color: #a7f3d0;
+    margin: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Feature Grid Section --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Flip Card Container */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 250px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: rgba(5, 46, 47, 0.4);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front h2,
+.flip-card-back h2 {
+  color: #34d399;
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.flip-card-front .flip-hint {
+  color: #6ee7b7;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.flip-card-back p {
+  color: #a7f3d0;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.flip-card:hover .flip-card-front,
+.flip-card:hover .flip-card-back {
+  border-color: rgba(34, 197, 94, 0.6);
+  box-shadow: 0 8px 24px rgba(52, 211, 153, 0.2);
+}

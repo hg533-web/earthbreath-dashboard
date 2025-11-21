@@ -1,5 +1,5 @@
 from app.db.database import engine, Base
-from app.models import user, gas_data
+from app.models import user, gas_data, hospital
 
 def init_db():
     """Initialize database - create all tables"""
@@ -8,4 +8,8 @@ def init_db():
 
 if __name__ == "__main__":
     init_db()
+
+
+
+
 
