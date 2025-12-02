@@ -6,14 +6,14 @@ A comprehensive dashboard for monitoring global climate data and NYC-specific he
 
 ```
 EarthBreathWeb/
-├── earthbreath-frontend/     # React + Vite frontend
+├── frontend/                 # React + Vite frontend
 │   ├── src/
 │   │   ├── api/              # API client
 │   │   ├── components/       # React components
 │   │   └── pages/            # Page components
 │   └── package.json
 │
-└── backend/                   # FastAPI backend
+└── backend/                  # FastAPI backend
     ├── app/
     │   ├── api/              # API routes
     │   ├── db/               # Database setup
@@ -23,80 +23,102 @@ EarthBreathWeb/
     └── earthbreath.db        # SQLite database (created after init)
 ```
 
+## Prerequisites
+
+- **Node.js**: v18 or higher
+- **Python**: v3.10 or higher
+- **npm**: v9 or higher
+
 ## Getting Started
 
-### Backend Setup
+Follow these steps to set up and run the project locally.
 
-1. **Navigate to backend directory:**
+### 1. Backend Setup
+
+Open a terminal and navigate to the `backend` directory:
+
 ```bash
 cd backend
 ```
 
-2. **Install Python dependencies:**
+Create a virtual environment (recommended):
+
+```bash
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+# macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Install Python dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Initialize database:**
+Initialize the database:
+
 ```bash
 python -m app.db.init_db
 ```
 
-4. **Start the backend server:**
+Start the backend server:
+
 ```bash
 uvicorn app.main:app --reload --port 8000
 ```
 
-Backend API will be available at `http://localhost:8000`
-- API Docs: http://localhost:8000/docs
+The Backend API will be available at `http://localhost:8000`.
+- **API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
 
-### Frontend Setup
+### 2. Frontend Setup
 
-1. **Navigate to frontend directory:**
+Open a **new terminal** window and navigate to the `frontend` directory:
+
 ```bash
-cd earthbreath-frontend
+cd frontend
 ```
 
-2. **Install dependencies:**
+Install dependencies:
+
 ```bash
 npm install
 ```
 
-3. **Start development server:**
+Start the development server:
+
 ```bash
 npm run dev
 ```
 
-Frontend will be available at `http://localhost:5173`
+The Frontend will be available at `http://localhost:5173`.
 
 ## Features
 
-### User Registration & Authentication
-- Multi-step registration form with asthma questionnaire
-- User data storage in SQLite database
-- Login functionality
-
 ### Global Climate Dashboard
-- Overview of global climate indicators
-- Individual gas pages (CO₂, CH₄, N₂O, SF₆)
-- Time and region filtering capabilities
+- **Interactive Globe**: Visualizes air quality and population data for 60+ major cities.
+- **Real-time Metrics**: Displays CO₂, Temperature, Methane, and Sea Level trends.
+- **Global Extremes**: Highlights cities with the cleanest and most polluted air.
+- **Planetary Breath Score**: A composite health score for the planet.
 
 ### NYC Dashboard
-- Local climate data visualization
-- Asthma case data by region
-- Hospital resource information
+- Local climate data visualization.
+- Asthma case data by region.
+- Hospital resource information.
 
-### Database Schema
-- **Users**: Stores registration and questionnaire data
-- **Gas Data**: Stores climate gas measurements for visualization
+### User System
+- User registration and login.
+- Asthma questionnaire for personalized tracking.
 
 ## Technology Stack
 
-- **Frontend**: React + TypeScript + Vite
-- **Backend**: FastAPI (Python)
-- **Database**: SQLite
-- **ORM**: SQLAlchemy
-- **Styling**: CSS with green/blue theme
+- **Frontend**: React, TypeScript, Vite, React Globe GL
+- **Backend**: FastAPI (Python), Pydantic
+- **Database**: SQLite, SQLAlchemy
+- **Styling**: CSS Modules with a custom dark/eco theme
 
 ## API Endpoints
 
@@ -108,5 +130,6 @@ Frontend will be available at `http://localhost:5173`
 - `GET /api/data/gas` - Get gas data with filters
 - `POST /api/data/gas` - Create gas data entry
 
-See backend README for complete API documentation.
+---
 
+*Built for the Cornell SYSN5151 Course.*
