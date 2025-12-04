@@ -13,23 +13,28 @@ export function GlobalOverview() {
   const cleanest = sortedByAQI.slice(0, 3);
   const polluted = sortedByAQI.slice(-3).reverse();
 
+  // Calculate population breathability impact
+  const totalPopulation = citiesData.reduce((acc, city) => acc + city.population, 0);
+  
+  // Categorize cities by breathability
+  const goodBreathability = citiesData.filter(city => city.breathability_index >= 0.75);
+  const moderateBreathability = citiesData.filter(city => city.breathability_index >= 0.50 && city.breathability_index < 0.75);
+  const poorBreathability = citiesData.filter(city => city.breathability_index < 0.50);
+  
+  const populationGood = goodBreathability.reduce((acc, city) => acc + city.population, 0);
+  const populationModerate = moderateBreathability.reduce((acc, city) => acc + city.population, 0);
+  const populationPoor = poorBreathability.reduce((acc, city) => acc + city.population, 0);
+  
+  const percentGood = Math.round((populationGood / totalPopulation) * 100);
+  const percentModerate = Math.round((populationModerate / totalPopulation) * 100);
+  const percentPoor = Math.round((populationPoor / totalPopulation) * 100);
+
   return (
     <div className="page-container">
       <div className="page-header">
         <h1>Global Climate Dashboard</h1>
         <p>Overview and visualization of global climate indicators</p>
       </div>
-
-      <section className="filters-section">
-        <div className="filter-card">
-          <h3>Time Filter</h3>
-          <p>Time dimension filter placeholder (date range picker, etc.)</p>
-        </div>
-        <div className="filter-card">
-          <h3>Region Filter</h3>
-          <p>Region dimension filter placeholder (country/region selector, etc.)</p>
-        </div>
-      </section>
 
       <section className="dashboard-grid">
         <div className="dashboard-card large" style={{ padding: '1rem', display: 'flex', flexDirection: 'column' }}>
@@ -123,6 +128,69 @@ export function GlobalOverview() {
                   <span className="extreme-value good">{city.aqi}</span>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="dashboard-card">
+          <h2>Population Breathability Impact</h2>
+          <div className="breathability-impact-container">
+            <div className="impact-summary">
+              <div className="impact-stat">
+                <span className="impact-label">Total Monitored</span>
+                <span className="impact-value">{(totalPopulation / 1000000).toFixed(1)}M</span>
+                <span className="impact-unit">people</span>
+              </div>
+            </div>
+            
+            <div className="breathability-breakdown">
+              <div className="breakdown-item good-breath">
+                <div className="breakdown-header">
+                  <span className="breakdown-label">Good Breathability</span>
+                  <span className="breakdown-percent">{percentGood}%</span>
+                </div>
+                <div className="breakdown-bar">
+                  <div 
+                    className="breakdown-fill good-fill" 
+                    style={{ width: `${percentGood}%` }}
+                  ></div>
+                </div>
+                <div className="breakdown-population">
+                  {(populationGood / 1000000).toFixed(1)}M people
+                </div>
+              </div>
+              
+              <div className="breakdown-item moderate-breath">
+                <div className="breakdown-header">
+                  <span className="breakdown-label">Moderate Breathability</span>
+                  <span className="breakdown-percent">{percentModerate}%</span>
+                </div>
+                <div className="breakdown-bar">
+                  <div 
+                    className="breakdown-fill moderate-fill" 
+                    style={{ width: `${percentModerate}%` }}
+                  ></div>
+                </div>
+                <div className="breakdown-population">
+                  {(populationModerate / 1000000).toFixed(1)}M people
+                </div>
+              </div>
+              
+              <div className="breakdown-item poor-breath">
+                <div className="breakdown-header">
+                  <span className="breakdown-label">Poor Breathability</span>
+                  <span className="breakdown-percent">{percentPoor}%</span>
+                </div>
+                <div className="breakdown-bar">
+                  <div 
+                    className="breakdown-fill poor-fill" 
+                    style={{ width: `${percentPoor}%` }}
+                  ></div>
+                </div>
+                <div className="breakdown-population">
+                  {(populationPoor / 1000000).toFixed(1)}M people
+                </div>
+              </div>
             </div>
           </div>
         </div>
