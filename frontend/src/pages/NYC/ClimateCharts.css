@@ -1,0 +1,66 @@
+.climate-charts-container {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #061a33 0%, #0d233d 100%);
+  border: 2px solid rgba(52, 211, 153, 0.2);
+  border-radius: 16px;
+}
+
+.charts-title {
+  color: #34d399;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.charts-description {
+  color: #a7f3d0;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.chart-section {
+  background: rgba(5, 46, 47, 0.4);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.chart-section h3 {
+  color: #34d399;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+@media (min-width: 1200px) {
+  .charts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .chart-section:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .climate-charts-container {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .charts-title {
+    font-size: 1.5rem;
+  }
+  
+  .chart-section {
+    padding: 1rem;
+  }
+}
+

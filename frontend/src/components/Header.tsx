@@ -1,16 +1,28 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import './Header.css'
 
 const navLinks = [
   { label: 'Global Overview', path: '/global' },
-  { label: 'Gas Pages', path: '/global/gases' },
   { label: 'NYC Dashboard', path: '/nyc' },
-  { label: 'Auth', path: '/auth' },
+  { label: 'Profile', path: '/profile' },
   { label: 'Settings', path: '/settings' },
 ]
 
 export function Header() {
   const location = useLocation()
+  const [user, setUser] = useState<any>(null)
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('user')
+      if (stored) {
+        setUser(JSON.parse(stored))
+      }
+    } catch (e) {
+      console.error('Error loading user:', e)
+    }
+  }, [])
 
   return (
     <header className="app-header">
@@ -37,9 +49,21 @@ export function Header() {
         })}
       </nav>
 
-      <Link to="/auth" className="cta-button">
-        Get Started
-      </Link>
+      {user ? (
+        <button 
+          className="cta-button"
+          onClick={() => {
+            localStorage.removeItem('user');
+            window.location.href = '/auth/login';
+          }}
+        >
+          Logout
+        </button>
+      ) : (
+        <Link to="/auth/login" className="cta-button">
+          Get Started
+        </Link>
+      )}
     </header>
   )
 }

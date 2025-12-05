@@ -17,15 +17,23 @@ export function Login() {
 
     try {
       const user = await apiClient.login({ email, password })
-      // Store user info (you can use localStorage or context)
+      // Store user info
       localStorage.setItem('user', JSON.stringify(user))
-      // Navigate to home or dashboard
-      navigate('/')
-    } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Login failed. Please check your credentials.'
-      setError(errorMessage)
+      // Navigate to profile page
+      navigate('/profile')
+    } catch (err: any) {
+      console.error('Login error:', err);
+      let errorMessage = 'Login failed. Please check your credentials.';
+      if (err instanceof Error) {
+        errorMessage = err.message;
+      } else if (err?.detail) {
+        errorMessage = err.detail;
+      } else if (typeof err === 'string') {
+        errorMessage = err;
+      }
+      setError(errorMessage);
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
   }
 

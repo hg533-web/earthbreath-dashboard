@@ -110,6 +110,8 @@ export function Signup() {
       if (!formData.password) newErrors.password = 'Please enter a password'
       else if (formData.password.length < 6) {
         newErrors.password = 'Password must be at least 6 characters'
+      } else if (formData.password.length > 72) {
+        newErrors.password = 'Password cannot be longer than 72 characters'
       }
       if (formData.password !== formData.confirmPassword) {
         newErrors.confirmPassword = 'Passwords do not match'
@@ -185,11 +187,29 @@ export function Signup() {
       // Success - navigate to login page
       alert('Registration successful! Please login with your credentials.')
       navigate('/auth/login')
-    } catch (error) {
+    } catch (error: any) {
       // Handle error
-      const errorMessage = error instanceof Error ? error.message : 'Registration failed. Please try again.'
-      setSubmitError(errorMessage)
-      console.error('Registration error:', error)
+      console.error('Registration error:', error);
+      console.error('Error details:', {
+        message: error?.message,
+        detail: error?.detail,
+        stack: error?.stack
+      });
+      
+      let errorMessage = 'Registration failed. Please try again.';
+      
+      // Check for network errors
+      if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+        errorMessage = 'Cannot connect to backend server. Please make sure the backend is running on http://localhost:8000';
+      } else if (error instanceof Error) {
+        errorMessage = error.message;
+      } else if (error?.detail) {
+        errorMessage = error.detail;
+      } else if (typeof error === 'string') {
+        errorMessage = error;
+      }
+      
+      setSubmitError(errorMessage);
     } finally {
       setIsSubmitting(false)
     }
@@ -475,8 +495,21 @@ export function Signup() {
             </div>
             
             {submitError && (
-              <div className="error-message" style={{ marginTop: '1rem', textAlign: 'center' }}>
-                {submitError}
+              <div className="error-message" style={{ 
+                marginTop: '1rem', 
+                textAlign: 'center',
+                padding: '1rem',
+                backgroundColor: 'rgba(248, 113, 113, 0.1)',
+                border: '2px solid rgba(248, 113, 113, 0.3)',
+                borderRadius: '8px',
+                fontSize: '1rem'
+              }}>
+                <strong>Error:</strong> {submitError}
+                {submitError.includes('backend') || submitError.includes('server') && (
+                  <div style={{ marginTop: '0.5rem', fontSize: '0.9rem' }}>
+                    Please make sure the backend server is running on http://localhost:8000
+                  </div>
+                )}
               </div>
             )}
           </form>

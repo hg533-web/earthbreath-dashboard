@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import auth, users, data, hospitals
+from app.api import auth, users, data, hospitals, nyc_climate, travel_recommendation
 
 app = FastAPI(
     title="EarthBreath API",
@@ -12,8 +12,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",  # Vite dev server
-        "http://localhost:3000",  # Alternative port
+        "*",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -25,6 +24,8 @@ app.include_router(auth.router)
 app.include_router(users.router)
 app.include_router(data.router)
 app.include_router(hospitals.router)
+app.include_router(nyc_climate.router)
+app.include_router(travel_recommendation.router)
 
 @app.get("/")
 async def root():

@@ -94,6 +94,75 @@
   box-shadow: 0 4px 12px rgba(52, 211, 153, 0.4);
 }
 
+.secondary-button {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 2px solid rgba(52, 211, 153, 0.4);
+  color: #34d399;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondary-button:hover {
+  background: rgba(52, 211, 153, 0.1);
+  border-color: rgba(52, 211, 153, 0.6);
+}
+
+.danger-button {
+  padding: 0.75rem 1.5rem;
+  background: rgba(244, 67, 54, 0.2);
+  border: 2px solid rgba(244, 67, 54, 0.4);
+  color: #f44336;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.danger-button:hover {
+  background: rgba(244, 67, 54, 0.3);
+  border-color: rgba(244, 67, 54, 0.6);
+}
+
+.setting-description {
+  color: #a7f3d0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.message {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.message.success {
+  background: rgba(52, 211, 153, 0.1);
+  border: 2px solid rgba(52, 211, 153, 0.3);
+  color: #34d399;
+}
+
+.message.error {
+  background: rgba(244, 67, 54, 0.1);
+  border: 2px solid rgba(244, 67, 54, 0.3);
+  color: #f44336;
+}
+
+.settings-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #030712 0%, #061a33 100%);
+  color: #f0fdfa;
+  padding: 2rem;
+}
+
 
 
 
