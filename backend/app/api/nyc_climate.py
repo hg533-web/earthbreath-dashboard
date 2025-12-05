@@ -3,9 +3,13 @@ from sqlalchemy.orm import Session
 from typing import List, Optional
 from datetime import date, datetime
 from pydantic import BaseModel
+import logging
 from app.db.database import get_db
 from app.models.nyc_climate import NYCClimateData
 from app.db.seed_nyc_data import generate_climate_data
+from app.services.climate_data_service import ClimateDataService
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api/nyc/climate", tags=["nyc-climate"])
 
@@ -87,24 +91,43 @@ async def get_latest_climate_data(
     zip_code: str = Query(..., description="ZIP code to get latest data for"),
     db: Session = Depends(get_db)
 ):
-    """Get latest climate data for a specific ZIP code. If not found, generates and saves new data."""
-    # Check if data exists
+    """Get latest climate data for a specific ZIP code. Uses real API data with seed data fallback."""
+    today = date.today()
+    
+    # Check if we have fresh data in database (today's data)
     data = db.query(NYCClimateData)\
-        .filter(NYCClimateData.zip_code == zip_code)\
-        .order_by(NYCClimateData.date.desc())\
+        .filter(
+            NYCClimateData.zip_code == zip_code,
+            NYCClimateData.date == today
+        )\
         .first()
     
-    # If data doesn't exist, generate it on the fly
-    if not data:
-        today = date.today()
+    # If we have fresh data, return it
+    if data:
+        return data
+    
+    # Otherwise, fetch from API and save to database
+    try:
+        climate_service = ClimateDataService()
+        climate_data_dict = await climate_service.get_nyc_climate_data(zip_code, today)
+        
+        # Save to database
+        new_data = NYCClimateData(**climate_data_dict)
+        db.add(new_data)
+        db.commit()
+        db.refresh(new_data)
+        
+        logger.info(f"Fetched and saved new climate data for ZIP {zip_code} from APIs")
+        return new_data
+    except Exception as e:
+        logger.error(f"Error fetching climate data from API: {e}")
+        # Fallback to seed data
         climate_data_dict = generate_climate_data(zip_code, today)
         new_data = NYCClimateData(**climate_data_dict)
         db.add(new_data)
         db.commit()
         db.refresh(new_data)
         return new_data
-    
-    return data
 
 @router.get("/zipcodes", response_model=List[str])
 async def get_zipcodes(db: Session = Depends(get_db)):

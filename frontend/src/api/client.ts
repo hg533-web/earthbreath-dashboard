@@ -253,14 +253,17 @@ class ApiClient {
   }
 
   // Travel Recommendations endpoints
-  async getTravelRecommendations(zipCode: string, days?: number): Promise<TravelRecommendationResponse[]> {
+  async getTravelRecommendations(zipCode: string, days?: number, userId?: number): Promise<TravelRecommendationResponse[]> {
     const params = new URLSearchParams({ zip_code: zipCode })
     if (days) params.append('days', days.toString())
+    if (userId) params.append('user_id', userId.toString())
     return this.request<TravelRecommendationResponse[]>(`/api/nyc/travel/forecast?${params.toString()}`)
   }
 
-  async getTodayTravelRecommendation(zipCode: string): Promise<TravelRecommendationResponse[]> {
-    return this.request<TravelRecommendationResponse[]>(`/api/nyc/travel/today?zip_code=${zipCode}`)
+  async getTodayTravelRecommendation(zipCode: string, userId?: number): Promise<TravelRecommendationResponse[]> {
+    const params = new URLSearchParams({ zip_code: zipCode })
+    if (userId) params.append('user_id', userId.toString())
+    return this.request<TravelRecommendationResponse[]>(`/api/nyc/travel/today?${params.toString()}`)
   }
 }
 

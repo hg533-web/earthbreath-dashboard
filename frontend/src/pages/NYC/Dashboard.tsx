@@ -190,8 +190,20 @@ export function NYCPage() {
       }
       
       const days = isLoggedIn ? 7 : 1;
-      console.log(`Loading ${days} days of recommendations from backend (logged in: ${isLoggedIn})`);
-      const recs = await apiClient.getTravelRecommendations(zip, days);
+      const userId = user?.id || (isLoggedIn ? (() => {
+        try {
+          const stored = localStorage.getItem('user');
+          if (stored) {
+            const userData = JSON.parse(stored);
+            return userData?.id;
+          }
+        } catch (e) {
+          console.error("Error parsing user from localStorage:", e);
+        }
+        return undefined;
+      })() : undefined);
+      console.log(`Loading ${days} days of recommendations from backend (logged in: ${isLoggedIn}, userId: ${userId})`);
+      const recs = await apiClient.getTravelRecommendations(zip, days, userId);
       setRecommendations(recs);
     } catch (err: any) {
       console.error("Failed to load travel recommendations:", err);
