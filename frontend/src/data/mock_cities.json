@@ -1318,5 +1318,885 @@
                 "so2": 1
             }
         }
+    },
+    {
+        "id": 61,
+        "name": "Baghdad",
+        "country": "Iraq",
+        "lat": 33.3152,
+        "lng": 44.3661,
+        "population": 8900000,
+        "aqi": 272,
+        "breathability_index": 0.15,
+        "metrics": {
+            "humidity": 30,
+            "temperature": 18,
+            "pollutants": {
+                "pm25": 185,
+                "pm10": 290,
+                "o3": 70,
+                "no2": 95,
+                "co": 2.8,
+                "so2": 18
+            }
+        }
+    },
+    {
+        "id": 62,
+        "name": "Hanoi",
+        "country": "Vietnam",
+        "lat": 21.0285,
+        "lng": 105.8542,
+        "population": 8500000,
+        "aqi": 236,
+        "breathability_index": 0.22,
+        "metrics": {
+            "humidity": 78,
+            "temperature": 22,
+            "pollutants": {
+                "pm25": 155,
+                "pm10": 220,
+                "o3": 55,
+                "no2": 80,
+                "co": 2.3,
+                "so2": 14
+            }
+        }
+    },
+    {
+        "id": 63,
+        "name": "Kathmandu",
+        "country": "Nepal",
+        "lat": 27.7172,
+        "lng": 85.3240,
+        "population": 1500000,
+        "aqi": 189,
+        "breathability_index": 0.32,
+        "metrics": {
+            "humidity": 55,
+            "temperature": 15,
+            "pollutants": {
+                "pm25": 115,
+                "pm10": 175,
+                "o3": 45,
+                "no2": 65,
+                "co": 1.9,
+                "so2": 12
+            }
+        }
+    },
+    {
+        "id": 64,
+        "name": "Tehran",
+        "country": "Iran",
+        "lat": 35.6892,
+        "lng": 51.3890,
+        "population": 9000000,
+        "aqi": 183,
+        "breathability_index": 0.35,
+        "metrics": {
+            "humidity": 40,
+            "temperature": 12,
+            "pollutants": {
+                "pm25": 110,
+                "pm10": 168,
+                "o3": 50,
+                "no2": 70,
+                "co": 1.8,
+                "so2": 11
+            }
+        }
+    },
+    {
+        "id": 65,
+        "name": "Accra",
+        "country": "Ghana",
+        "lat": 5.6037,
+        "lng": -0.1870,
+        "population": 2557000,
+        "aqi": 204,
+        "breathability_index": 0.28,
+        "metrics": {
+            "humidity": 82,
+            "temperature": 29,
+            "pollutants": {
+                "pm25": 130,
+                "pm10": 195,
+                "o3": 48,
+                "no2": 58,
+                "co": 2.0,
+                "so2": 10
+            }
+        }
+    },
+    {
+        "id": 66,
+        "name": "Nairobi",
+        "country": "Kenya",
+        "lat": -1.2921,
+        "lng": 36.8219,
+        "population": 4734000,
+        "aqi": 47,
+        "breathability_index": 0.90,
+        "metrics": {
+            "humidity": 65,
+            "temperature": 22,
+            "pollutants": {
+                "pm25": 12,
+                "pm10": 25,
+                "o3": 35,
+                "no2": 22,
+                "co": 0.5,
+                "so2": 3
+            }
+        }
+    },
+    {
+        "id": 67,
+        "name": "Johannesburg",
+        "country": "South Africa",
+        "lat": -26.2041,
+        "lng": 28.0473,
+        "population": 5926000,
+        "aqi": 69,
+        "breathability_index": 0.84,
+        "metrics": {
+            "humidity": 50,
+            "temperature": 24,
+            "pollutants": {
+                "pm25": 22,
+                "pm10": 42,
+                "o3": 45,
+                "no2": 32,
+                "co": 0.7,
+                "so2": 5
+            }
+        }
+    },
+    {
+        "id": 68,
+        "name": "Cape Town",
+        "country": "South Africa",
+        "lat": -33.9249,
+        "lng": 18.4241,
+        "population": 4710000,
+        "aqi": 37,
+        "breathability_index": 0.93,
+        "metrics": {
+            "humidity": 60,
+            "temperature": 21,
+            "pollutants": {
+                "pm25": 9,
+                "pm10": 18,
+                "o3": 32,
+                "no2": 18,
+                "co": 0.4,
+                "so2": 2
+            }
+        }
+    },
+    {
+        "id": 69,
+        "name": "Addis Ababa",
+        "country": "Ethiopia",
+        "lat": 9.0320,
+        "lng": 38.7490,
+        "population": 5228000,
+        "aqi": 97,
+        "breathability_index": 0.72,
+        "metrics": {
+            "humidity": 52,
+            "temperature": 18,
+            "pollutants": {
+                "pm25": 38,
+                "pm10": 72,
+                "o3": 42,
+                "no2": 40,
+                "co": 0.9,
+                "so2": 6
+            }
+        }
+    },
+    {
+        "id": 70,
+        "name": "Wellington",
+        "country": "New Zealand",
+        "lat": -41.2866,
+        "lng": 174.7756,
+        "population": 418500,
+        "aqi": 12,
+        "breathability_index": 0.99,
+        "metrics": {
+            "humidity": 80,
+            "temperature": 14,
+            "pollutants": {
+                "pm25": 3,
+                "pm10": 6,
+                "o3": 18,
+                "no2": 8,
+                "co": 0.2,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 71,
+        "name": "Auckland",
+        "country": "New Zealand",
+        "lat": -36.8509,
+        "lng": 174.7645,
+        "population": 1657000,
+        "aqi": 18,
+        "breathability_index": 0.98,
+        "metrics": {
+            "humidity": 75,
+            "temperature": 17,
+            "pollutants": {
+                "pm25": 5,
+                "pm10": 10,
+                "o3": 20,
+                "no2": 12,
+                "co": 0.3,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 72,
+        "name": "Hobart",
+        "country": "Australia",
+        "lat": -42.8821,
+        "lng": 147.3272,
+        "population": 240000,
+        "aqi": 8,
+        "breathability_index": 0.99,
+        "metrics": {
+            "humidity": 68,
+            "temperature": 15,
+            "pollutants": {
+                "pm25": 2,
+                "pm10": 4,
+                "o3": 15,
+                "no2": 5,
+                "co": 0.1,
+                "so2": 0
+            }
+        }
+    },
+    {
+        "id": 73,
+        "name": "Darwin",
+        "country": "Australia",
+        "lat": -12.4634,
+        "lng": 130.8456,
+        "population": 145000,
+        "aqi": 15,
+        "breathability_index": 0.98,
+        "metrics": {
+            "humidity": 70,
+            "temperature": 32,
+            "pollutants": {
+                "pm25": 4,
+                "pm10": 8,
+                "o3": 22,
+                "no2": 10,
+                "co": 0.2,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 74,
+        "name": "Canberra",
+        "country": "Australia",
+        "lat": -35.2809,
+        "lng": 149.1300,
+        "population": 453000,
+        "aqi": 20,
+        "breathability_index": 0.97,
+        "metrics": {
+            "humidity": 55,
+            "temperature": 18,
+            "pollutants": {
+                "pm25": 5,
+                "pm10": 11,
+                "o3": 25,
+                "no2": 12,
+                "co": 0.2,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 75,
+        "name": "Perth",
+        "country": "Australia",
+        "lat": -31.9505,
+        "lng": 115.8605,
+        "population": 2140000,
+        "aqi": 22,
+        "breathability_index": 0.96,
+        "metrics": {
+            "humidity": 52,
+            "temperature": 25,
+            "pollutants": {
+                "pm25": 6,
+                "pm10": 12,
+                "o3": 28,
+                "no2": 14,
+                "co": 0.3,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 76,
+        "name": "Oulu",
+        "country": "Finland",
+        "lat": 65.0121,
+        "lng": 25.4651,
+        "population": 210000,
+        "aqi": 10,
+        "breathability_index": 0.99,
+        "metrics": {
+            "humidity": 82,
+            "temperature": -5,
+            "pollutants": {
+                "pm25": 3,
+                "pm10": 5,
+                "o3": 15,
+                "no2": 6,
+                "co": 0.1,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 77,
+        "name": "Uppsala",
+        "country": "Sweden",
+        "lat": 59.8586,
+        "lng": 17.6389,
+        "population": 180000,
+        "aqi": 12,
+        "breathability_index": 0.99,
+        "metrics": {
+            "humidity": 78,
+            "temperature": 2,
+            "pollutants": {
+                "pm25": 3,
+                "pm10": 6,
+                "o3": 18,
+                "no2": 8,
+                "co": 0.2,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 78,
+        "name": "Stockholm",
+        "country": "Sweden",
+        "lat": 59.3293,
+        "lng": 18.0686,
+        "population": 1600000,
+        "aqi": 18,
+        "breathability_index": 0.98,
+        "metrics": {
+            "humidity": 75,
+            "temperature": 3,
+            "pollutants": {
+                "pm25": 5,
+                "pm10": 9,
+                "o3": 22,
+                "no2": 12,
+                "co": 0.2,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 79,
+        "name": "Helsinki",
+        "country": "Finland",
+        "lat": 60.1699,
+        "lng": 24.9384,
+        "population": 656000,
+        "aqi": 15,
+        "breathability_index": 0.98,
+        "metrics": {
+            "humidity": 80,
+            "temperature": -1,
+            "pollutants": {
+                "pm25": 4,
+                "pm10": 8,
+                "o3": 20,
+                "no2": 10,
+                "co": 0.2,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 80,
+        "name": "Reykjavik",
+        "country": "Iceland",
+        "lat": 64.1466,
+        "lng": -21.9426,
+        "population": 135000,
+        "aqi": 8,
+        "breathability_index": 0.99,
+        "metrics": {
+            "humidity": 85,
+            "temperature": 2,
+            "pollutants": {
+                "pm25": 2,
+                "pm10": 4,
+                "o3": 12,
+                "no2": 5,
+                "co": 0.1,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 81,
+        "name": "Tallinn",
+        "country": "Estonia",
+        "lat": 59.4370,
+        "lng": 24.7536,
+        "population": 445000,
+        "aqi": 14,
+        "breathability_index": 0.98,
+        "metrics": {
+            "humidity": 78,
+            "temperature": 1,
+            "pollutants": {
+                "pm25": 4,
+                "pm10": 7,
+                "o3": 18,
+                "no2": 9,
+                "co": 0.2,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 82,
+        "name": "Copenhagen",
+        "country": "Denmark",
+        "lat": 55.6761,
+        "lng": 12.5683,
+        "population": 1350000,
+        "aqi": 20,
+        "breathability_index": 0.97,
+        "metrics": {
+            "humidity": 80,
+            "temperature": 5,
+            "pollutants": {
+                "pm25": 5,
+                "pm10": 10,
+                "o3": 22,
+                "no2": 14,
+                "co": 0.3,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 83,
+        "name": "Faro",
+        "country": "Portugal",
+        "lat": 37.0179,
+        "lng": -7.9304,
+        "population": 64000,
+        "aqi": 14,
+        "breathability_index": 0.98,
+        "metrics": {
+            "humidity": 72,
+            "temperature": 17,
+            "pollutants": {
+                "pm25": 4,
+                "pm10": 8,
+                "o3": 25,
+                "no2": 8,
+                "co": 0.2,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 84,
+        "name": "Lisbon",
+        "country": "Portugal",
+        "lat": 38.7223,
+        "lng": -9.1393,
+        "population": 2942000,
+        "aqi": 30,
+        "breathability_index": 0.95,
+        "metrics": {
+            "humidity": 68,
+            "temperature": 16,
+            "pollutants": {
+                "pm25": 8,
+                "pm10": 15,
+                "o3": 30,
+                "no2": 18,
+                "co": 0.3,
+                "so2": 2
+            }
+        }
+    },
+    {
+        "id": 85,
+        "name": "Bilbao",
+        "country": "Spain",
+        "lat": 43.2630,
+        "lng": -2.9350,
+        "population": 350000,
+        "aqi": 22,
+        "breathability_index": 0.97,
+        "metrics": {
+            "humidity": 75,
+            "temperature": 14,
+            "pollutants": {
+                "pm25": 6,
+                "pm10": 11,
+                "o3": 24,
+                "no2": 14,
+                "co": 0.3,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 86,
+        "name": "Zurich",
+        "country": "Switzerland",
+        "lat": 47.3769,
+        "lng": 8.5417,
+        "population": 435000,
+        "aqi": 24,
+        "breathability_index": 0.96,
+        "metrics": {
+            "humidity": 72,
+            "temperature": 8,
+            "pollutants": {
+                "pm25": 6,
+                "pm10": 12,
+                "o3": 26,
+                "no2": 16,
+                "co": 0.3,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 87,
+        "name": "Geneva",
+        "country": "Switzerland",
+        "lat": 46.2044,
+        "lng": 6.1432,
+        "population": 205000,
+        "aqi": 28,
+        "breathability_index": 0.95,
+        "metrics": {
+            "humidity": 70,
+            "temperature": 7,
+            "pollutants": {
+                "pm25": 7,
+                "pm10": 14,
+                "o3": 28,
+                "no2": 18,
+                "co": 0.3,
+                "so2": 2
+            }
+        }
+    },
+    {
+        "id": 88,
+        "name": "Oslo",
+        "country": "Norway",
+        "lat": 59.9139,
+        "lng": 10.7522,
+        "population": 1064000,
+        "aqi": 16,
+        "breathability_index": 0.98,
+        "metrics": {
+            "humidity": 78,
+            "temperature": 0,
+            "pollutants": {
+                "pm25": 4,
+                "pm10": 8,
+                "o3": 20,
+                "no2": 10,
+                "co": 0.2,
+                "so2": 1
+            }
+        }
+    },
+    {
+        "id": 89,
+        "name": "Peshawar",
+        "country": "Pakistan",
+        "lat": 34.0151,
+        "lng": 71.5249,
+        "population": 2000000,
+        "aqi": 245,
+        "breathability_index": 0.20,
+        "metrics": {
+            "humidity": 48,
+            "temperature": 18,
+            "pollutants": {
+                "pm25": 165,
+                "pm10": 240,
+                "o3": 58,
+                "no2": 82,
+                "co": 2.4,
+                "so2": 16
+            }
+        }
+    },
+    {
+        "id": 90,
+        "name": "Rawalpindi",
+        "country": "Pakistan",
+        "lat": 33.5651,
+        "lng": 73.0169,
+        "population": 2100000,
+        "aqi": 195,
+        "breathability_index": 0.30,
+        "metrics": {
+            "humidity": 52,
+            "temperature": 16,
+            "pollutants": {
+                "pm25": 125,
+                "pm10": 185,
+                "o3": 52,
+                "no2": 68,
+                "co": 2.0,
+                "so2": 13
+            }
+        }
+    },
+    {
+        "id": 91,
+        "name": "Ho Chi Minh City",
+        "country": "Vietnam",
+        "lat": 10.8231,
+        "lng": 106.6297,
+        "population": 9000000,
+        "aqi": 145,
+        "breathability_index": 0.48,
+        "metrics": {
+            "humidity": 80,
+            "temperature": 30,
+            "pollutants": {
+                "pm25": 68,
+                "pm10": 115,
+                "o3": 45,
+                "no2": 52,
+                "co": 1.4,
+                "so2": 7
+            }
+        }
+    },
+    {
+        "id": 92,
+        "name": "Kuwait City",
+        "country": "Kuwait",
+        "lat": 29.3759,
+        "lng": 47.9774,
+        "population": 3100000,
+        "aqi": 175,
+        "breathability_index": 0.38,
+        "metrics": {
+            "humidity": 35,
+            "temperature": 22,
+            "pollutants": {
+                "pm25": 95,
+                "pm10": 165,
+                "o3": 55,
+                "no2": 62,
+                "co": 1.6,
+                "so2": 12
+            }
+        }
+    },
+    {
+        "id": 93,
+        "name": "Riyadh",
+        "country": "Saudi Arabia",
+        "lat": 24.7136,
+        "lng": 46.6753,
+        "population": 7600000,
+        "aqi": 168,
+        "breathability_index": 0.42,
+        "metrics": {
+            "humidity": 28,
+            "temperature": 24,
+            "pollutants": {
+                "pm25": 88,
+                "pm10": 155,
+                "o3": 52,
+                "no2": 58,
+                "co": 1.5,
+                "so2": 10
+            }
+        }
+    },
+    {
+        "id": 94,
+        "name": "Dubai",
+        "country": "UAE",
+        "lat": 25.2048,
+        "lng": 55.2708,
+        "population": 3400000,
+        "aqi": 95,
+        "breathability_index": 0.74,
+        "metrics": {
+            "humidity": 55,
+            "temperature": 26,
+            "pollutants": {
+                "pm25": 36,
+                "pm10": 68,
+                "o3": 48,
+                "no2": 42,
+                "co": 0.9,
+                "so2": 6
+            }
+        }
+    },
+    {
+        "id": 95,
+        "name": "Abu Dhabi",
+        "country": "UAE",
+        "lat": 24.4539,
+        "lng": 54.3773,
+        "population": 1500000,
+        "aqi": 88,
+        "breathability_index": 0.78,
+        "metrics": {
+            "humidity": 58,
+            "temperature": 25,
+            "pollutants": {
+                "pm25": 32,
+                "pm10": 62,
+                "o3": 45,
+                "no2": 38,
+                "co": 0.8,
+                "so2": 5
+            }
+        }
+    },
+    {
+        "id": 96,
+        "name": "Casablanca",
+        "country": "Morocco",
+        "lat": 33.5731,
+        "lng": -7.5898,
+        "population": 3715000,
+        "aqi": 72,
+        "breathability_index": 0.82,
+        "metrics": {
+            "humidity": 72,
+            "temperature": 18,
+            "pollutants": {
+                "pm25": 24,
+                "pm10": 45,
+                "o3": 38,
+                "no2": 32,
+                "co": 0.7,
+                "so2": 4
+            }
+        }
+    },
+    {
+        "id": 97,
+        "name": "Marrakech",
+        "country": "Morocco",
+        "lat": 31.6295,
+        "lng": -7.9811,
+        "population": 1070000,
+        "aqi": 55,
+        "breathability_index": 0.88,
+        "metrics": {
+            "humidity": 45,
+            "temperature": 20,
+            "pollutants": {
+                "pm25": 15,
+                "pm10": 30,
+                "o3": 35,
+                "no2": 22,
+                "co": 0.5,
+                "so2": 3
+            }
+        }
+    },
+    {
+        "id": 98,
+        "name": "Tunis",
+        "country": "Tunisia",
+        "lat": 36.8065,
+        "lng": 10.1815,
+        "population": 2365000,
+        "aqi": 68,
+        "breathability_index": 0.84,
+        "metrics": {
+            "humidity": 70,
+            "temperature": 16,
+            "pollutants": {
+                "pm25": 20,
+                "pm10": 40,
+                "o3": 40,
+                "no2": 30,
+                "co": 0.6,
+                "so2": 4
+            }
+        }
+    },
+    {
+        "id": 99,
+        "name": "Dar es Salaam",
+        "country": "Tanzania",
+        "lat": -6.7924,
+        "lng": 39.2083,
+        "population": 7400000,
+        "aqi": 82,
+        "breathability_index": 0.80,
+        "metrics": {
+            "humidity": 78,
+            "temperature": 28,
+            "pollutants": {
+                "pm25": 28,
+                "pm10": 55,
+                "o3": 42,
+                "no2": 35,
+                "co": 0.8,
+                "so2": 5
+            }
+        }
+    },
+    {
+        "id": 100,
+        "name": "Luanda",
+        "country": "Angola",
+        "lat": -8.8390,
+        "lng": 13.2894,
+        "population": 8952000,
+        "aqi": 125,
+        "breathability_index": 0.58,
+        "metrics": {
+            "humidity": 82,
+            "temperature": 26,
+            "pollutants": {
+                "pm25": 52,
+                "pm10": 95,
+                "o3": 38,
+                "no2": 48,
+                "co": 1.2,
+                "so2": 7
+            }
+        }
     }
 ]

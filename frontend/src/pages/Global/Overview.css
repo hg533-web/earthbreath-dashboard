@@ -220,6 +220,7 @@
   background: rgba(244, 67, 54, 0.2);
   color: #f44336;
 }
+
 /* Global Extremes Card */
 .extremes-container {
   display: flex;
@@ -360,4 +361,69 @@
 .breakdown-population {
   font-size: 0.85rem;
   color: #a7f3d0;
+}
+
+/* AI Enhancement Styles */
+.ai-badge-small {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(6, 182, 212, 0.3) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 12px;
+  color: #a78bfa;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.ai-insight-box {
+  font-size: 0.85rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 8px;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+}
+
+.ai-insight-mini {
+  font-size: 0.75rem;
+  padding: 0.5rem;
+  background: rgba(139, 92, 246, 0.08);
+  border-left: 2px solid #8b5cf6;
+  border-radius: 4px;
+  color: #a78bfa;
+  line-height: 1.4;
+}
+
+.forecast-insight {
+  font-size: 0.75rem;
+  color: #8b5cf6;
+  margin-left: auto;
+  padding-left: 1rem;
+  max-width: 40%;
+  text-align: right;
+}
+
+.forecast-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Responsive adjustments for forecast */
+@media (max-width: 600px) {
+  .forecast-insight {
+    max-width: 100%;
+    text-align: left;
+    padding-left: 0;
+    margin-left: 0;
+    width: 100%;
+    order: 3;
+  }
 }

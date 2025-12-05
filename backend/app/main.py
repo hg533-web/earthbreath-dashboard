@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import auth, users, data, hospitals, nyc_climate, travel_recommendation
+from app.api import auth, users, data, hospitals, nyc_climate, travel_recommendation, ai_summary
 
 app = FastAPI(
     title="EarthBreath API",
@@ -26,6 +26,7 @@ app.include_router(data.router)
 app.include_router(hospitals.router)
 app.include_router(nyc_climate.router)
 app.include_router(travel_recommendation.router)
+app.include_router(ai_summary.router)
 
 @app.get("/")
 async def root():
