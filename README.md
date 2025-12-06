@@ -73,6 +73,10 @@ Depending on the system configuration, it is rare but possible for an issue to o
 lsof -ti tcp:8000 | xargs kill -9 2>/dev/null
 python -m app.db.init_db
 python -m app.db.seed_nyc_data
+conda activate earthbreath
+
+python -m app.db.init_db         
+python -m app.db.seed_hospitals
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 
